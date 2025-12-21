@@ -33,34 +33,92 @@
 // })
 
 
-function schoolfee(fee) {
+// function schoolfee(fee) {
+//   return new Promise((resolve , reject)=>{
+//     setTimeout(() => {
+//       if (fee >= 10000) {
+//       resolve("Admission Hogaya")
+//       }else{
+//         reject("Admission canceled")
+//       }
+//     }, 1000);
+//   })
+// }
+
+// schoolfee(1000)
+// .then((res)=>{
+//   console.log("Ap ka shukriya");
+//   console.log(res);
+//   return res + " chaining "
+// }).then((res)=>{
+// console.log("chaibning");
+// console.log(res);
+
+// })
+// .catch((err)=>{
+//   console.log("ap dusri school mai jaye");
+//   console.log(err);
+  
+// })
+// .finally(()=>{
+//   console.log("mai har jaga ata hu mai badshah hu");
+  
+// })
+
+
+// function goForSedan(budget) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (budget > 4000000) {
+//         resolve("Go for sedan");
+//       } else {
+//         reject("Go for alto dabba");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// async function promiseExecute() {
+//   try{
+//     const wait = await goForSedan(5000000)
+//     console.log(wait);
+    
+//   }
+//   catch (error){
+//     console.error(error);
+    
+//   }
+// }
+// promiseExecute()
+
+
+
+
+
+
+function CarRent(rent) {
   return new Promise((resolve , reject)=>{
     setTimeout(() => {
-      if (fee >= 10000) {
-      resolve("Admission Hogaya")
+    if (rent >= 10000) {
+        resolve("4 seater car")
       }else{
-        reject("Admission canceled")
+        reject("motorcycle")
       }
     }, 1000);
   })
 }
 
-schoolfee(1000)
-.then((res)=>{
-  console.log("Ap ka shukriya");
-  console.log(res);
-  return res + " chaining "
-}).then((res)=>{
-console.log("chaibning");
-console.log(res);
+async function carRental() {
+  try {
+    const wait = await CarRent(1000)
+  console.log(wait);
+  } catch (error) {
+    console.warn(error);
+    
+  }
+  
+}
 
-})
-.catch((err)=>{
-  console.log("ap dusri school mai jaye");
-  console.log(err);
-  
-})
-.finally(()=>{
-  console.log("mai har jaga ata hu mai badshah hu");
-  
-})
+carRental()
+
+
